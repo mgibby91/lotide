@@ -33,7 +33,9 @@ const eqObjects = function (object1, object2) {
   if (object1NumKeys !== object2NumKeys) return false;
 
   for (let key in object1) {
-    if (Array.isArray(object1[key]) && !eqArrays(object1[key], object2[key])) {
+    if (object1[key] instanceof Object && !(object1[key] instanceof Array)) {
+      eqObjects(object1[key], object2[key]);
+    } else if (Array.isArray(object1[key]) && !eqArrays(object1[key], object2[key])) {
       return false;
     } else if (!Array.isArray(object1[key]) && object1[key] !== object2[key]) {
       return false;
@@ -58,4 +60,10 @@ const cd2 = { c: "1", d: ["2", 3, 4] };
 
 assertEqual(eqObjects(cd, dc), true);
 assertEqual(eqObjects(cd, cd2), false);
+
+// Object comparison
+assertEqual(eqObjects({ a: { z: { z: 1 } }, b: 2 }, { a: { z: { z: 1 } }, b: 2 }), true);
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false);
+
+
 
