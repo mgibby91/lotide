@@ -1,5 +1,5 @@
 
-const eqArrays = function (array1, array2) {
+const eqArrays = function(array1, array2) {
 
   if (array1.length !== array2.length) {
     return false;
@@ -16,7 +16,7 @@ const eqArrays = function (array1, array2) {
 }
 
 
-const assertArraysEqual = function (array1, array2) {
+const assertArraysEqual = function(array1, array2) {
 
   const areArraysEqual = eqArrays(array1, array2);
 
@@ -30,7 +30,7 @@ const assertArraysEqual = function (array1, array2) {
 
 
 let answer = [];
-const flatten = function (array) {
+const flatten = function(array) {
 
   for (let item of array) {
     if (Array.isArray(item)) {
@@ -46,5 +46,7 @@ const flatten = function (array) {
 }
 
 assertArraysEqual(flatten([1, 2, [3, 4, [5, 6]], 7, [8]]), [1, 2, 3, 4, 5, 6, 7, 8]);
+
+module.exports = flatten;
 
 

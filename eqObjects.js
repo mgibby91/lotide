@@ -1,4 +1,4 @@
-const assertEqual = function (actual, expected) {
+const assertEqual = function(actual, expected) {
 
   if (actual === expected) {
     console.log(`🤑 Assertion Passed: ${actual} === ${expected}`);
@@ -8,7 +8,7 @@ const assertEqual = function (actual, expected) {
 
 };
 
-const eqArrays = function (array1, array2) {
+const eqArrays = function(array1, array2) {
 
   if (array1.length !== array2.length) {
     return false;
@@ -25,7 +25,7 @@ const eqArrays = function (array1, array2) {
 };
 
 
-const eqObjects = function (object1, object2) {
+const eqObjects = function(object1, object2) {
 
   const object1NumKeys = Object.keys(object1).length;
   const object2NumKeys = Object.keys(object2).length;
@@ -65,5 +65,5 @@ assertEqual(eqObjects(cd, cd2), false);
 assertEqual(eqObjects({ a: { z: { z: 1 } }, b: 2 }, { a: { z: { z: 1 } }, b: 2 }), true);
 assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false);
 
-
+module.exports = eqObjects;
 

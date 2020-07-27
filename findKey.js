@@ -1,4 +1,4 @@
-const assertEqual = function (actual, expected) {
+const assertEqual = function(actual, expected) {
 
   if (actual === expected) {
     console.log(`🤑 Assertion Passed: ${actual} === ${expected}`);
@@ -9,7 +9,7 @@ const assertEqual = function (actual, expected) {
 };
 
 
-const findKey = function (object, callback) {
+const findKey = function(object, callback) {
 
   for (let key in object) {
     if (callback(object[key])) {
@@ -31,3 +31,6 @@ const results1 = findKey({
 console.log(results1);
 
 assertEqual(results1, 'noma');
+
+
+module.exports = findKey;

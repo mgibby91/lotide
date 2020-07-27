@@ -1,5 +1,5 @@
 
-const eqArrays = function (array1, array2) {
+const eqArrays = function(array1, array2) {
 
   if (array1.length !== array2.length) {
     return false;
@@ -15,7 +15,7 @@ const eqArrays = function (array1, array2) {
 
 };
 
-const eqObjects = function (object1, object2) {
+const eqObjects = function(object1, object2) {
 
   const object1NumKeys = Object.keys(object1).length;
   const object2NumKeys = Object.keys(object2).length;
@@ -35,7 +35,7 @@ const eqObjects = function (object1, object2) {
 };
 
 
-const assertObjectsEqual = function (object1, object2) {
+const assertObjectsEqual = function(object1, object2) {
 
   const inspect = require('util').inspect;
 
@@ -55,3 +55,5 @@ const cd2 = { c: "1", d: ["2", 3, 4] };
 
 assertObjectsEqual(cd, dc);
 assertObjectsEqual(cd, cd2);
+
+module.exports = assertObjectsEqual;
