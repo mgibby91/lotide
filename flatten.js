@@ -35,7 +35,6 @@ const flatten = function(array) {
   for (let item of array) {
     if (Array.isArray(item)) {
       flatten(item);
-      // I know it said not to use recursion, but I just wanted to see if I could! Sorry...
     } else {
       answer.push(item);
     }
