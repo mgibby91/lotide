@@ -21,4 +21,6 @@ const tail = function(array) {
 
 };
 
+console.log(tail([1]));
+
 module.exports = tail;
